@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <rect width="256" height="256" rx="48" fill="#0A0118"/>
+  <g transform="translate(48, 40)">
+    <!-- Document shape -->
+    <rect x="28" y="0" width="104" height="140" rx="8" fill="#7C3AED" opacity="0.15" stroke="#7C3AED" stroke-width="3"/>
+    <rect x="28" y="0" width="104" height="140" rx="8" fill="none" stroke="#7C3AED" stroke-width="3"/>
+    <!-- Page lines -->
+    <line x1="48" y1="32" x2="112" y2="32" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+    <line x1="48" y1="52" x2="100" y2="52" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <line x1="48" y1="72" x2="108" y2="72" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <line x1="48" y1="92" x2="96" y2="92" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+    <!-- Analytics eye -->
+    <g transform="translate(80, 110)">
+      <ellipse cx="0" cy="0" rx="22" ry="14" fill="none" stroke="#7C3AED" stroke-width="3"/>
+      <circle cx="0" cy="0" r="7" fill="#7C3AED"/>
+      <circle cx="2" cy="-2" r="2.5" fill="#0A0118"/>
+    </g>
+  </g>
+  <!-- Papermark text -->
+  <text x="128" y="224" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" fill="#7C3AED" letter-spacing="1">PAPERMARK</text>
+</svg>
