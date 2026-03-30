@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y openssl ca-certificates git && rm -rf /
 FROM base AS source
 WORKDIR /app
 ARG PAPERMARK_VERSION=main
-RUN git clone --depth 1 --branch ${PAPERMARK_VERSION} https://github.com/mfts/papermark.git .
+RUN git clone --depth 1 --branch ${PAPERMARK_VERSION} https://github.com/mfts/papermark.git . \
+    && sed -i 's/host?.endsWith(".vercel.app")/host?.endsWith(".vercel.app") || host?.endsWith(".railway.app")/' middleware.ts
 
 FROM base AS deps
 WORKDIR /app
