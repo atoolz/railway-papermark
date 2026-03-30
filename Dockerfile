@@ -22,6 +22,10 @@ ENV NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ENV NEXTAUTH_URL=http://localhost:3000
 ENV NEXT_PUBLIC_APP_BASE_HOST=localhost:3000
 ENV NEXT_PUBLIC_WEBHOOK_BASE_HOST=localhost:3000
+ENV OPENAI_API_KEY=sk-build-placeholder
+ENV UPSTASH_REDIS_REST_URL=https://placeholder.upstash.io
+ENV UPSTASH_REDIS_REST_TOKEN=placeholder
+ENV QSTASH_TOKEN=placeholder
 RUN npm run build
 
 FROM base AS runner
