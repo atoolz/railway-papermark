@@ -26,36 +26,38 @@
 
 ## Deploy and Host Papermark on Railway
 
-Papermark is an open-source document sharing platform and DocSend alternative. Share pitch decks, proposals, contracts, and any document with a trackable link. See who viewed each page, how long they spent, and whether they downloaded it. Add email capture, password protection, custom branding, and your own domain. Built with Next.js, Prisma, and PostgreSQL.
+Papermark is an open-source document sharing and data room platform. It lets you share pitch decks, proposals, contracts, and any document through a trackable link with page-by-page analytics, email capture, password protection, custom branding, and your own domain.
 
-### About Hosting Papermark
+## About Hosting Papermark
 
-The template clones the upstream [mfts/papermark](https://github.com/mfts/papermark) repository and builds it inside a multi-stage Dockerfile (Node 22 slim). Prisma generates the client at build time; migrations run automatically at container startup via `prisma migrate deploy`. The app listens on **`PORT`** (default 3000) and reads **`POSTGRES_PRISMA_URL`** for the database. You need blob storage for uploaded documents: either a **Vercel Blob** token or **S3-compatible** credentials (AWS, MinIO, Cloudflare R2). Email notifications require a **Resend** API key. Google OAuth is optional but recommended for login.
+This template clones the upstream [mfts/papermark](https://github.com/mfts/papermark) repository and builds it inside a multi-stage Dockerfile on Node 22. Prisma generates the database client at build time and migrations run automatically at container startup via `prisma migrate deploy`. The app listens on port 3000 and connects to PostgreSQL through `POSTGRES_PRISMA_URL`. Document uploads require blob storage: either a Vercel Blob token or S3-compatible credentials (AWS, MinIO, Cloudflare R2). Email notifications require a Resend API key. Google OAuth and passkey login are optional.
 
-### Common Use Cases
+## Common Use Cases
 
-- Sharing pitch decks with investors and tracking who opened each slide and for how long
+- Sharing pitch decks with investors and tracking who viewed each slide and for how long
 - Sending proposals and contracts with email verification, NDA acceptance, and download controls
 - Running virtual data rooms for due diligence with granular viewer permissions and audit trails
 
-### Dependencies for Papermark Hosting
+## Dependencies for Papermark Hosting
 
-- Railway **PostgreSQL** (or any Postgres-compatible URL)
+- Railway **PostgreSQL** plugin (provisioned automatically by the template)
 - **Blob storage** for documents: Vercel Blob token or S3/R2/MinIO credentials
 - **Resend** API key for transactional emails (optional but recommended)
-- **Google OAuth** credentials for login (optional; email/magic link works without it)
+- **Google OAuth** credentials for social login (optional; email magic link works without it)
 
-#### Deployment Dependencies
+### Deployment Dependencies
 
-- [Papermark](https://github.com/mfts/papermark)
-- [Next.js](https://nextjs.org/)
-- [Prisma](https://www.prisma.io/)
-- [Resend](https://resend.com/)
-- [Railway](https://railway.com/)
+- [Papermark](https://github.com/mfts/papermark) — upstream open-source project (AGPL-3.0)
+- [Next.js 14](https://nextjs.org/) — React framework
+- [Prisma 6](https://www.prisma.io/) — database ORM and migrations
+- [Resend](https://resend.com/) — transactional email API
+- [Railway](https://railway.com/) — hosting platform
 
-### Why Deploy on Railway?
+## Why Deploy Papermark on Railway?
 
-Railway hosts your stack with minimal configuration and scales as you grow.
+Railway is a singular platform to deploy your infrastructure stack. Railway will host your infrastructure so you don't have to deal with configuration, while allowing you to vertically and horizontally scale it.
+
+By deploying Papermark on Railway, you are one step closer to supporting a complete full-stack application with minimal burden. Host your servers, databases, AI agents, and more on Railway.
 
 <br>
 
